@@ -5,7 +5,7 @@ import java.util.function.Supplier;
 
 public class MyListImpl<T extends Number> implements IMyList<T>{
 
-    private Object[] data = {};
+    private Number[] data = {};
     private int capacity = 0;
 
     private int size;
@@ -45,12 +45,12 @@ public class MyListImpl<T extends Number> implements IMyList<T>{
             throw new IllegalArgumentException();
         }
         // to be sure we have enough room to add
-        Object[] newData;
+        Number[] newData;
         if (size < capacity) {
             newData = data;
         } else {
             capacity += increment;
-            newData = new Object[capacity];
+            newData = new Number[capacity];
         }
 
         // move/copy array part [0..size-1]
@@ -67,12 +67,12 @@ public class MyListImpl<T extends Number> implements IMyList<T>{
         }
         checkRangeAndDo(index, () -> {
             // to be sure we have enough room to add
-            Object[] newData;
+            Number[] newData;
             if (size < capacity) {
                 newData = data;
             } else {
                 capacity += increment;
-                newData = new Object[capacity];
+                newData = new Number[capacity];
             }
 
             // move/copy array part [index..size-1]
